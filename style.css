@@ -166,7 +166,7 @@ background-image: -webkit-gradient(
 .btn {
 	width: 250px;
 	display: block;
-	height: 42px;
+	height: 41px;
 	background: #555;
 	background: url(button.png);
 }
