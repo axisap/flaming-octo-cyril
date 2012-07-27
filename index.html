@@ -2,6 +2,9 @@
 <head>
 	<title>Mobilis Apps :: Mobile Solutions for Small Business</title>
 	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="./jquery.reveal.js"></script>
+	<link rel="stylesheet" type="text/css" href="./reveal.css">
 	<!--[if !IE 7]>
 	<style type="text/css">
 		#wrap {display:table;height:100%}
@@ -63,5 +66,35 @@
 	</div>
 	<div class="footer">
 	</div>
+	<div id="request_info" class="reveal-modal">
+     <h1>Request Info</h1>
+     <p>Email</p>
+     <p>
+     	<input type="text" name="email">
+     </p>
+     <p>
+     	<textarea name="message"></textarea>
+     </p>
+     <p>
+     	<button class="contact_us">Send</button>
+     </p>
+     <a class="close-reveal-modal">&#215;</a>
+</div>
+<script type="text/javascript">
+	$('.contact_us').live('click', function(){
+		var body = {}
+		body.email = $('input[name="email"]').val()
+		body.message = $('textarea[name="message"]').val()
+		/*
+		$.post('http://admin.axisapp.com/email', body, function(){
+
+		})
+		*/
+		setTimeout(function(){
+			$('#request_info').html('<h2>Sent</h2>')
+			$('#request_info').fadeOut()
+		})
+	})
+</script>
 </body>
 </html>
